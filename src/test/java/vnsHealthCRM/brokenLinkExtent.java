@@ -106,22 +106,19 @@ public class brokenLinkExtent extends BaseTest{
 
 	@Test (testName= "Broken Link Test", priority = 1)
 	public void testBrokenLinks() {
+		ArrayList allList= new ArrayList();
 		ArrayList el= new ArrayList();
 		ArrayList adl= new ArrayList();
 		ArrayList bl = new ArrayList();
 		ArrayList mdl= new ArrayList();
 
 		List<WebElement> mylinks = driver.findElements(By.xpath("//a"));
-		log("There are "+mylinks.size()+ " urls in the page under test");
-		//System.out.println("There are "+mylinks.size()+ " urls in the page under test");
-		//System.out.println("The links are listed below:"+ mylinks);
-		log("*******************************************************");
 
 		Iterator<WebElement> myit = mylinks.iterator();
 		while (myit.hasNext()) {
 
 			myurl = myit.next().getAttribute("href");
-			//System.out.println("The link is :"+myurl);
+			allList.add(myurl);
 
 			if (myurl == null || myurl.isEmpty()) {
 				//System.out.println("Empty URL or an Unconfigured URL");
@@ -140,7 +137,7 @@ public class brokenLinkExtent extends BaseTest{
 				continue;
 			}
 		}
-		
+
 		try {
 			myhuc = (HttpURLConnection) (new URL(myurl).openConnection());
 			myhuc.setRequestMethod("HEAD");
@@ -148,8 +145,9 @@ public class brokenLinkExtent extends BaseTest{
 			responseCode = myhuc.getResponseCode();
 
 			if (responseCode >= 400) {
-				//System.out.println(myurl + " This link is broken");
-				bl.add(responseCode);
+				System.out.println(myurl + " This link is broken");
+
+				bl.add(myurl);
 
 			} else {
 				//System.out.println(myurl + " This link is valid");
@@ -160,6 +158,8 @@ public class brokenLinkExtent extends BaseTest{
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
+		log("There are "+allList.size()+ " urls in the page under test");
+		log("*******************************************************");
 
 		log("A total of "+mdl.size()+ " urls in the page are from the same domain");
 		log("The urls from same domain are listed below:");
@@ -179,7 +179,7 @@ public class brokenLinkExtent extends BaseTest{
 		log("A total of "+bl.size()+ " links are broken");
 		log("The broken links are listed below:");
 		bl.forEach(t -> log((String) t));
-		
+
 	}
 
 	@Test (testName="Broken Image Test", priority=2)
