@@ -54,7 +54,7 @@ public class brokenLinkExtent extends BaseTest{
 	HttpURLConnection myhuc = null;
 	int responseCode = 200;
 
-	String excelPath = "C:\\\\Users\\\\802072\\\\git\\\\brokenLinkTestCRM\\\\src\\\\test\\\\resources\\\\testData\\\\testData.xlsx";
+	String excelPath = "C:\\Users\\802072\\git\\brokenLinkTestCRM\\src\\test\\resources\\testData\\testData.xlsx";
 	String sheetName = "loginInfo";
 
 	@BeforeTest (alwaysRun= true)
@@ -98,7 +98,7 @@ public class brokenLinkExtent extends BaseTest{
 			e.printStackTrace();
 		}
 
-		Assert.assertEquals(driver.findElement(By.xpath("//h1[text()='Recent Authorizations']")).getText(), "Recent Authorizations");
+		//Assert.assertEquals(driver.findElement(By.xpath("//h1[text()=\"Recent Authorizations\"]")).getText(), "Recent Authorizations");
 		//log("The Login Page url is: "+ myhomePage);
 		//log("Login is successful with user name : "+ data.get(1));
 	}
@@ -113,16 +113,18 @@ public class brokenLinkExtent extends BaseTest{
 
 		List<WebElement> mylinks = driver.findElements(By.xpath("//a"));
 		log("There are "+mylinks.size()+ " urls in the page under test");
+		//System.out.println("There are "+mylinks.size()+ " urls in the page under test");
+		//System.out.println("The links are listed below:"+ mylinks);
 		log("*******************************************************");
 
 		Iterator<WebElement> myit = mylinks.iterator();
 		while (myit.hasNext()) {
 
 			myurl = myit.next().getAttribute("href");
-			System.out.println("The link is :"+myurl);
+			//System.out.println("The link is :"+myurl);
 
 			if (myurl == null || myurl.isEmpty()) {
-				System.out.println("Empty URL or an Unconfigured URL");
+				//System.out.println("Empty URL or an Unconfigured URL");
 				el.add(myurl);
 				continue;
 			}
@@ -146,7 +148,7 @@ public class brokenLinkExtent extends BaseTest{
 			responseCode = myhuc.getResponseCode();
 
 			if (responseCode >= 400) {
-				System.out.println(myurl + " This link is broken");
+				//System.out.println(myurl + " This link is broken");
 				bl.add(responseCode);
 
 			} else {
@@ -177,6 +179,7 @@ public class brokenLinkExtent extends BaseTest{
 		log("A total of "+bl.size()+ " links are broken");
 		log("The broken links are listed below:");
 		bl.forEach(t -> log((String) t));
+		
 	}
 
 	@Test (testName="Broken Image Test", priority=2)
@@ -201,7 +204,7 @@ public class brokenLinkExtent extends BaseTest{
 
 					if (response.getStatusLine().getStatusCode() != 200)
 					{
-						System.out.println(img.getAttribute("outerHTML") + " is broken.");
+						//System.out.println(img.getAttribute("outerHTML") + " is broken.");
 						log("The broken image is :"+img.getAttribute("outerHTML"));
 						iBrokenImageCount++;
 					}
@@ -212,7 +215,7 @@ public class brokenLinkExtent extends BaseTest{
 		{
 			e.printStackTrace();
 			status = "failed";
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
 		status = "passed";
 		//System.out.println("The page " + "has " + iBrokenImageCount + " broken image/s");

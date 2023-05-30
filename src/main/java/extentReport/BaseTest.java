@@ -34,8 +34,8 @@ public class BaseTest {
 	}
 
 	@AfterTest
-	public void teardown() {
-		//driver.quit();
+	public void tearUp() {
+		driver.quit();
 	}
 
 	@BeforeSuite
@@ -70,10 +70,10 @@ public class BaseTest {
 	@AfterMethod
 	public void checkStatus(Method m, ITestResult result) {
 		if(result.getStatus() == ITestResult.FAILURE) {
-			extentTest.fail(m.getName() + " is failed");
+			extentTest.fail(m.getName() + " has failed");
 			extentTest.fail(result.getThrowable());
 		} else if(result.getStatus() == ITestResult.SUCCESS) {
-			extentTest.pass(m.getName() + " is passed");
+			extentTest.pass(m.getName() + " has passed");
 		}
 
 		extentTest.assignCategory(m.getAnnotation(Test.class).groups());
