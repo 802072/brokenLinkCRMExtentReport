@@ -1,24 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-    
-  <test thread-count="5" name="Broken Link Test">
-    <classes>
-     <class name="vnsHealthCRM.brokenLinkExtent">
-		<methods>
-			<include name= "testBrokenLinks" />
-		</methods>
-	 </class>
-    </classes>
-  </test> <!-- Test -->
-  
-  <test thread-count="5" name="Broken Image Test">
-    <classes>
-     <class name="vnsHealthCRM.brokenLinkExtent">
-		<methods>
-			<include name= "testBrokenImages" />
-		</methods>
-	 </class>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+<test name="1. Test Broken Link: Homepage">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksHomePage" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="2. Test Broken Link: Rosters Page">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksRosterPage" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="3. Test Broken Link: Eligibility Search">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksEligibilitySearch" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="4. Test Broken Link: Enrollment Referrals">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksEnrollmentRef" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="5. Test Broken Link: Claims and Payments">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksClaimsAndPayments" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="6. Test Broken Link: Authorizations">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksAuthPage" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="7. Test Broken Link: Appeals and Disputes">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksAppealsAndDisputes" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="8. Test Broken Link: Communication Center">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksCommunicationCenter" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="9. Test Broken Link: Resources">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksResources" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="10. Test Broken Link: My Account">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksMyAcc" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="11. Test Broken Link: Technical Support">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksTechSupp" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="12. Test Broken Link: Contact Us">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenLinkTestPP">
+				<methods>
+					<include name="testBrokenLinksContactUs" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="1. Test Broken Image: Homepage">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesHomePage" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="2. Test Broken Image: Rosters Page">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesRosterPage" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="3. Test Broken Image: Eligibility Search">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesEligibilitySearch" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="4. Test Broken Image: Enrollment Referrals">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesEnrollmentRef" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="5. Test Broken Image: Claims and Payments">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesClaimsAndPayments" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="6. Test Broken Image: Authorizations">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesAuthPage" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="7. Test Broken Image: Appeals and Disputes">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesAppealsAndDisputes" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="8. Test Broken Image: Communication Center">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesCommunicationCenter" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="9. Test Broken Image: Resources">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesResources" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="10. Test Broken Image: My Account">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesMyAcc" />
+				</methods>
+			</class>
+		</classes>
+	</test><test name="11. Test Broken Image: Technical Support">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesTechSupp" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="12. Test Broken Image: Contact Us">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="providerPortalTests.BrokenImageTestPP">
+				<methods>
+					<include name="testBrokenImagesContactUs" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	
+	
+	
+	
+	
+	
+	
+</suite> 
